@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+int main(int argc, char **argv)
+{
+	int i,j,y,tamp,banyak_data,cari;
+	cout << "masukkan banyak data : ";
+	cin >> banyak_data;
+	int data [banyak_data];
+	for(i=0;i<banyak_data;i++)
+	{
+		cout << "masukkan data ke " << i << ":";
+		cin >> data[i];
+	}
+	cout << "masukkan data yang dicari : ";
+	cin >> cari;
+
+	cout <<"sebelum disorting : ";
+	for(i=0; i<5; i++)
+	{
+		cout<<data[i]<<" ";
+	}
+		for(int i=1; i<5; i++)
+		{
+			for(j=0; j<4; j++)
+			{
+				if(data[j]>data[j+1])
+				{
+						tamp=data[j];
+						data[j]=data[j+1];
+						data[j+1]=tamp;
+				}
+			}
+		}
+	cout <<"\n";
+	cout<<"setelah diurut :";
+	for (y: data)
+	{
+		cout<<y<<" ";
+	}
+	
+
+	return 0;
+}

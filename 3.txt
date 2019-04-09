@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+enum class KETEMU{YA,TIDAK};
+int main(int argc, char **argv)
+{
+	KETEMU ketemu;
+	int banyak_data,cari,i;
+
+	cout << "masukkan banyak data: ";
+	cin  >> banyak_data;
+	
+	int data[banyak_data];
+	
+	for (i=0;i<banyak_data;i++)
+	{
+		cout<<"masukkan data ke: " << i << ":";
+		cin >> data[i];
+	}
+	cout << "masukkan data yang dicari: ";
+	cin >> cari;
+	
+	for (i=0;i<banyak_data;i++)
+	{
+		if(data[i]==cari)
+		{
+			ketemu=KETEMU::YA;
+			break;
+		}
+	}
+	if(ketemu==KETEMU::YA)
+	{
+		cout << "ketemu di indeks ke: " << i ;
+	}
+	else
+	{
+		cout << "\ndata tidak ketemu";
+	}
+	return 0;
+}
+
+	
